@@ -1,0 +1,29 @@
+<div class="pop">
+<ion-header>
+  <ion-searchbar showCancelButton="always" animated color="dark" [(ngModel)]="searchTerm">
+
+  </ion-searchbar>
+  <ion-button fill="clear" (click)="setFilteredItems()">
+    Go
+  </ion-button>
+  <ion-button end fill="clear" (click)="closePop()">
+    Close
+  </ion-button>
+</ion-header>
+<ion-content>
+  
+  <div class="ionfor" > 
+    <ion-card *ngFor="let s of items" color="light" class="ion-text-center" (click)="itempage(s.name)">
+      <div class="cardtitle">
+        <ion-card-title>{{s.name}}</ion-card-title>
+        <ion-card-subtitle>{{s.price}}</ion-card-subtitle>
+      </div>
+        <div>
+          <img src="{{s.imagePath}}" >
+        </div>
+
+    </ion-card>
+  </div>
+  
+</ion-content>
+</div>
